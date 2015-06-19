@@ -6,3 +6,5 @@ With this solution the implementation is rather simple. If there is a PageEditor
 To create a PageEditor specific view you copy the current and add ".PageEditor" to the name.
 - SomeRendering.cshtml (default)
 - SomeRendering.PageEditor.cshtml (used only in PageEditor mode)
+
+This solution works for ControllerRenderings and ViewRenderings.
