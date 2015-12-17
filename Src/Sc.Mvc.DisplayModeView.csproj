@@ -7,8 +7,8 @@
     <ProjectGuid>{CD9FB4CA-71DF-4D9E-9210-E441BEE5C69C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sc.Commons.PageEditorView</RootNamespace>
-    <AssemblyName>Sc.Commons.PageEditorView</AssemblyName>
+    <RootNamespace>Sc.Mvc.DisplayModeView</RootNamespace>
+    <AssemblyName>Sc.Mvc.DisplayModeView</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -35,10 +35,10 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
-      <HintPath>..\libs\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\Depends\Sitecore\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Mvc">
-      <HintPath>..\libs\Sitecore\Sitecore.Mvc.dll</HintPath>
+      <HintPath>..\Depends\Sitecore\Sitecore.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,14 +70,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GetPageEditorViewRenderer.cs" />
-    <Compile Include="PageEditorDisplayMode.cs" />
-    <Compile Include="PageEditorViewRenderer.cs" />
+    <Compile Include="GetDisplayModeViewRenderer.cs" />
+    <Compile Include="ContextSiteDisplayMode.cs" />
+    <Compile Include="DisplayModeViewRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterDisplayMode.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Config\Include\Sc.Mvc\DisplayModeView.config" />
     <None Include="packages.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

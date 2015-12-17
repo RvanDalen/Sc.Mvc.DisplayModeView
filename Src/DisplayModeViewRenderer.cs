@@ -2,17 +2,18 @@
 using System.Web.Hosting;
 using Sitecore;
 using Sitecore.Mvc.Presentation;
+using Sitecore.Sites;
 
-namespace Sc.Commons.PageEditorView
+namespace Sc.Mvc.DisplayModeView
 {
-    public class PageEditorViewRenderer : ViewRenderer
+    public class DisplayModeViewRenderer : ViewRenderer
     {
         public override void Render(TextWriter writer)
         {
-            if (Context.PageMode.IsPageEditor)
+            if (Context.Site != null && Context.Site.DisplayMode != DisplayMode.Normal)
             {
                 var extension = Path.GetExtension(ViewPath);
-                var filePath = Path.ChangeExtension(ViewPath, "PageEditor" + extension);
+                var filePath = Path.ChangeExtension(ViewPath, Context.Site.DisplayMode + extension);
 
                 if (HostingEnvironment.VirtualPathProvider.FileExists(filePath))
                     ViewPath = filePath;

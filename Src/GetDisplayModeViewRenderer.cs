@@ -1,9 +1,9 @@
 ﻿using Sitecore.Mvc.Pipelines.Response.GetRenderer;
 using Sitecore.Mvc.Presentation;
 
-namespace Sc.Commons.PageEditorView
+namespace Sc.Mvc.DisplayModeView
 {
-    public class GetPageEditorViewRenderer : GetViewRenderer
+    public class GetDisplayModeViewRenderer : GetViewRenderer
     {
         public override void Process(GetRendererArgs args)
         {
@@ -12,7 +12,7 @@ namespace Sc.Commons.PageEditorView
             var viewRendering = args.Result as ViewRenderer;
             if (viewRendering != null)
             {
-                args.Result = new PageEditorViewRenderer
+                args.Result = new DisplayModeViewRenderer
                 {
                     ViewPath = viewRendering.ViewPath,
                     Rendering = viewRendering.Rendering
